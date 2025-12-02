@@ -46,16 +46,15 @@ const FileExplorer: React.FC<FileExplorerProps> = ({ onNavigate, activeNode }) =
   ];
 
   return (
-    <div className="h-full w-full bg-gray-900 overflow-hidden">
-      {/* File Tree */}
+    <div className="h-full w-full bg-gray-900 overflow-y-hidden">
       <div className="p-2">
         <Tree
           data={treeData}
           openByDefault={false}
           width="100%"
-          height={600}
+          height={800}
           indent={20}
-          rowHeight={28}
+          rowHeight={50}  
           overscanCount={1}
           padding={8}
           onSelect={(nodes) => {

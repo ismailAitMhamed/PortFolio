@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import Layout from './components/layout/Layout';
 
+// Importer les composants sectionnels
+import Profile from './components/sections/Profile';
+import Education from './components/sections/Education';
+import DeltaExperience from './components/sections/DeltaExperience';
+import AddExperience from './components/sections/AddExperience';
+import DeutschPrepa from './components/sections/DeutschPrepa';
+import AllProjects from './components/sections/AllProjects';
+import Contact from './components/sections/Contact';
+
 function App() {
   const [activeNode, setActiveNode] = useState<string>('profile');
 
@@ -10,69 +19,22 @@ function App() {
 
   const renderContent = () => {
     switch (activeNode) {
+      case 'formation':
+        return <Education />;
       case 'profile':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Profile</h1>
-            <p>Profile content goes here...</p>
-          </div>
-        );
+        return <Profile />;
       case 'education':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Education</h1>
-            <p>Education content goes here...</p>
-          </div>
-        );
+        return <Education />;
       case 'delta':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Delta Experience</h1>
-            <p>Delta experience content goes here...</p>
-          </div>
-        );
+        return <DeltaExperience />;
       case 'add':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">ADD Experience</h1>
-            <p>ADD experience content goes here...</p>
-          </div>
-        );
-      case 'experience-all':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">All Experience</h1>
-            <p>All experience content goes here...</p>
-          </div>
-        );
+        return <AddExperience />;
       case 'deutschprepa':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Deutsch Prepa Project</h1>
-            <p>Deutsch Prepa project content goes here...</p>
-          </div>
-        );
-      case 'repair':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Repair Project</h1>
-            <p>Repair project content goes here...</p>
-          </div>
-        );
+        return <DeutschPrepa />;
       case 'projects-all':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">All Projects</h1>
-            <p>All projects content goes here...</p>
-          </div>
-        );
+        return <AllProjects />;
       case 'contact':
-        return (
-          <div>
-            <h1 className="text-3xl font-bold mb-4">Contact</h1>
-            <p>Contact content goes here...</p>
-          </div>
-        );
+        return <Contact />;
       default:
         return (
           <div>

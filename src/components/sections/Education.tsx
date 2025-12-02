@@ -1,6 +1,6 @@
 
 
-const Formation: React.FC = () => {
+const Education: React.FC = () => {
   return (
     <section className="formation-section">
       <h2>Formation</h2>
@@ -9,4 +9,4 @@ const Formation: React.FC = () => {
   );
 };
 
-export default Formation;
+export default Education;
